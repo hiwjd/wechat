@@ -16,6 +16,7 @@ import (
 	"github.com/silenceper/wechat/pay"
 	"github.com/silenceper/wechat/qr"
 	"github.com/silenceper/wechat/server"
+	"github.com/silenceper/wechat/subscribe"
 	"github.com/silenceper/wechat/tcb"
 	"github.com/silenceper/wechat/user"
 )
@@ -122,4 +123,9 @@ func (wc *Wechat) GetDevice() *device.Device {
 // GetTcb 获取小程序-云开发的实例
 func (wc *Wechat) GetTcb() *tcb.Tcb {
 	return tcb.NewTcb(wc.Context)
+}
+
+// GetSubscribe 获取订阅消息的实例
+func (wc *Wechat) GetSubscribe() *subscribe.Subscribe {
+	return subscribe.NewSubscribe(wc.Context)
 }
